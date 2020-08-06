@@ -179,7 +179,7 @@ jobs:
     steps:
     - uses: actions/download-artifact@v1
       with:
-        name: firefox-continuous-x86_64.AppImage
+        name: firefox-beta-continuous-x86_64.AppImage
 
     - name: Release
       uses: marvinpinto/action-automatic-releases@latest
@@ -199,7 +199,7 @@ jobs:
     steps:
     - uses: actions/download-artifact@v1
       with:
-        name: firefox-continuous-x86_64.AppImage
+        name: firefox-nightly-continuous-x86_64.AppImage
 
     - name: Release
       uses: marvinpinto/action-automatic-releases@latest
