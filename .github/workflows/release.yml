@@ -35,6 +35,7 @@ jobs:
     
     - name: Patch AppImage
       run: |
+        cd firefox
         wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         chmod +x *.AppImage
         ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|firefox-appimage|latest|Firefox*.AppImage.zsync'
@@ -43,13 +44,14 @@ jobs:
         cd dist
         mv *.AppImage Firefox-$(cat ../firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat ../firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+').AppImage
         chmod +x *.AppImage
+        cd ..
        
 
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
         name: firefox-continuous-x86_64.AppImage
-        path: 'dist'
+        path: 'firefox/dist'
 
 
 
@@ -66,6 +68,7 @@ jobs:
       uses: marvinpinto/action-automatic-releases@latest
       with:
         title: Stable Firefox Builds
+        automatic_release_tag: stable
         prerelease: false
         draft: false
         files: |
