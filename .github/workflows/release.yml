@@ -32,7 +32,8 @@ jobs:
         cp ../AppRun firefox/.
         chmod +x firefox/AppRun
         cp ../firefox.desktop firefox/.
-        cp ../firefox.png firefox/.
+        cp firefox/browser/chrome/icons/default/default128.png firefox/.
+        mv firefox/default128.png firefox/firefox.png
         cd ..
     
     - name: Patch AppImage
@@ -78,7 +79,8 @@ jobs:
         cp ../AppRun firefox/.
         chmod +x firefox/AppRun
         cp ../firefox.desktop firefox/.
-        cp ../firefox.png firefox/.
+        cp firefox/browser/chrome/icons/default/default128.png firefox/.
+        mv firefox/default128.png firefox/firefox-beta.png
         cd ..
     
     - name: Patch AppImage
@@ -124,7 +126,8 @@ jobs:
         cp ../AppRun firefox/.
         chmod +x firefox/AppRun
         cp ../firefox.desktop firefox/.
-        cp ../firefox.png firefox/.
+        cp firefox/browser/chrome/icons/default/default128.png firefox/.
+        mv firefox/default128.png firefox/firefox-nightly.png
         cd ..
     
     - name: Patch AppImage
@@ -136,7 +139,7 @@ jobs:
         mkdir dist
         mv Firefox*.AppImage dist/.
         cd dist
-        mv *.AppImage FirefoxBeta-$(cat ../firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat ../firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+').AppImage
+        mv *.AppImage FirefoxNightly-$(cat ../firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat ../firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+').AppImage
         chmod +x *.AppImage
         cd ..
        
@@ -161,9 +164,51 @@ jobs:
     - name: Release
       uses: marvinpinto/action-automatic-releases@latest
       with:
-        title: Stable Firefox Builds
+        title: Firefox Stable AppImage Builds
         automatic_release_tag: stable
         prerelease: false
         draft: false
         files: |
           firefox-continuous-x86_64.AppImage
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+
+  Release-Beta:
+    needs: [Firefox-Beta]
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/download-artifact@v1
+      with:
+        name: firefox-continuous-x86_64.AppImage
+
+    - name: Release
+      uses: marvinpinto/action-automatic-releases@latest
+      with:
+        title: Firefox Beta AppImage Builds
+        automatic_release_tag: beta
+        prerelease: true
+        draft: false
+        files: |
+          firefox-beta-continuous-x86_64.AppImage
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+
+  Release-Nightly:
+    needs: [Firefox-Nightly]
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/download-artifact@v1
+      with:
+        name: firefox-continuous-x86_64.AppImage
+
+    - name: Release
+      uses: marvinpinto/action-automatic-releases@latest
+      with:
+        title: Firefox Nightly AppImage Builds
+        automatic_release_tag: beta
+        prerelease: true
+        draft: false
+        files: |
+          firefox-nightly-continuous-x86_64.AppImage
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+
