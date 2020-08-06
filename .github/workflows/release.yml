@@ -1,0 +1,74 @@
+
+name: Release
+on: 
+  push:
+    branches:
+        - "master"
+
+
+jobs:
+  Firefox:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        version: ['3.8']
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Download Firefox
+      run: |
+        mkdir firefox
+        cd firefox
+        wget https://download.mozilla.org/\?product\=firefox-latest-ssl\&os\=linux64\&lang\=en-US 
+        mv * firefox.tar.bz2
+        tar -xf firefox.tar.bz2
+        cd ..
+
+    - name: Patch to include files
+      run: |
+        cd firefox
+        cp ../AppRun .
+        chmod +x AppRun
+        cp ../firefox.desktop .
+        cp ../firefox.png .
+        cd ..
+    
+    - name: Patch AppImage
+      run: |
+        wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+        chmod +x *.AppImage
+        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|firefox-appimage|latest|Firefox*.AppImage.zsync'
+        mkdir dist
+        mv Firefox*.AppImage dist/.
+        cd dist
+        mv *.AppImage Firefox-$(cat ../firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat ../firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+').AppImage
+        chmod +x *.AppImage
+       
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: firefox-continuous-x86_64.AppImage
+        path: 'dist'
+
+
+
+  Release:
+    needs: [Firefox]
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/download-artifact@v1
+      with:
+        name: firefox-continuous-x86_64.AppImage
+
+    - name: Release
+      uses: marvinpinto/action-automatic-releases@latest
+      with:
+        title: Stable Firefox Builds
+        prerelease: false
+        draft: false
+        files: |
+          firefox-continuous-x86_64.AppImage
+          
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
