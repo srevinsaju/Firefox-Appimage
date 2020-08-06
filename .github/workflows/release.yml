@@ -115,7 +115,7 @@ jobs:
       run: |
         mkdir firefox
         cd firefox
-        wget wget https://download.mozilla.org/\?product\=firefox-nightly-latest-ssl\&os\=linux64\&lang\=en-US
+        wget https://download.mozilla.org/\?product\=firefox-nightly-latest-ssl\&os\=linux64\&lang\=en-US
         mv * firefox.tar.bz2
         tar -xf firefox.tar.bz2
         cd ..
