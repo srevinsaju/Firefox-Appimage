@@ -27,10 +27,10 @@ jobs:
     - name: Patch to include files
       run: |
         cd firefox
-        cp ../AppRun .
-        chmod +x AppRun
-        cp ../firefox.desktop .
-        cp ../firefox.png .
+        cp ../AppRun firefox/.
+        chmod +x firefox/AppRun
+        cp ../firefox.desktop firefox/.
+        cp ../firefox.png firefox/.
         cd ..
     
     - name: Patch AppImage
