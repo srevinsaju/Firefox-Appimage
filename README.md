@@ -1,9 +1,9 @@
 <h1 align="center">
-	<img src="firefox.png" alt="SwagLyrics" height=200 width=200 align="middle">
+	<img src="firefox.png" alt="Firefox" height=200 width=200 align="middle">
 	Firefox AppImage
 </h1>
 
-Mozilla Firefox Stable, Beta and Nightly AppImages by GitHub Actions Continuous Integration
+Mozilla Firefox Stable, Beta and Nightly (unofficial) AppImages by GitHub Actions Continuous Integration
 
 ## Get Started
 
