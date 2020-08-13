@@ -118,8 +118,7 @@ jobs:
       run: |
         mkdir firefox
         cd firefox
-        wget https://download.mozilla.org/?product=firefox-esr-next-latest-ssl&os=linux64&lang=en-US
-        mv * firefox.tar.bz2
+        wget https://download.mozilla.org/?product=firefox-esr-next-latest-ssl&os=linux64&lang=en-US -O firefox.tar.bz2
         tar -xf firefox.tar.bz2
         cd ..
 
