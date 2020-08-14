@@ -129,7 +129,7 @@ jobs:
         chmod +x firefox/AppRun
         cp ../firefox.desktop firefox/.
         cp firefox/browser/chrome/icons/default/default128.png firefox/.
-        mv firefox/default128.png firefox/firefox-esr.png
+        mv firefox/default128.png firefox/firefox.png
         cd ..
     
     - name: Patch AppImage
@@ -137,15 +137,13 @@ jobs:
         cd firefox
         wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         chmod +x *.AppImage
-        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|firefox-appimage|beta|Firefox*.AppImage.zsync'
+        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|firefox-appimage|beta|Firefox*.AppImage.zsync' Firefox_ESR-$(cat ../firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat ../firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+').AppImage
         mkdir dist
         mv Firefox*.AppImage dist/.
         mv *zsync dist/.
         cd dist
-        mv *.AppImage Firefox_ESR-$(cat ../firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat ../firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+').AppImage
         chmod +x *.AppImage
         cd ..
-       
 
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
