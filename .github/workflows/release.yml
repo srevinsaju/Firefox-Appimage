@@ -41,7 +41,7 @@ jobs:
         cd firefox
         wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         chmod +x *.AppImage
-        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|firefox-appimage|stable|Firefox*.AppImage.zsync' Firefox-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
+        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|Firefox-AppImage|stable|Firefox*.AppImage.zsync' Firefox-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
         mkdir dist
         mv Firefox*.AppImage dist/.
         mv *zsync dist/.
@@ -88,7 +88,7 @@ jobs:
         cd firefox
         wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         chmod +x *.AppImage
-        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|firefox-appimage|beta|Firefox*.AppImage.zsync' Firefox_Beta-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
+        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|Firefox-AppImage|beta|Firefox*.AppImage.zsync' Firefox_Beta-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
         mkdir dist
         mv Firefox*.AppImage dist/.
         mv *zsync dist/.
@@ -135,7 +135,7 @@ jobs:
         cd firefox
         wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         chmod +x *.AppImage
-        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|firefox-appimage|esr|Firefox*.AppImage.zsync' Firefox_ESR-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
+        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|Firefox-AppImage|esr|Firefox*.AppImage.zsync' Firefox_ESR-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
         mkdir dist
         mv Firefox*.AppImage dist/.
         mv *zsync dist/.
@@ -181,7 +181,7 @@ jobs:
         cd firefox
         wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         chmod +x *.AppImage
-        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|firefox-appimage|nightly|Firefox*.AppImage.zsync' Firefox_Nightly-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
+        ./appimagetool-x86_64.AppImage --comp gzip firefox -n -u 'gh-releases-zsync|srevinsaju|Firefox-AppImage|nightly|Firefox*.AppImage.zsync' Firefox_Nightly-$(cat firefox/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')_$(cat firefox/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')-x86_64.AppImage
         mkdir dist
         mv Firefox*.AppImage dist/.
         mv *zsync dist/.
