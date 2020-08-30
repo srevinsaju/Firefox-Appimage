@@ -12,7 +12,7 @@ Download the latest release from
 | Stable | Beta | Nightly | ESR |
 | ------- | --------- | --------| ------ | 
 | <img src="firefox.png" height=100> | <img src="https://mozilla.org/media/protocol/img/logos/firefox/browser/beta/logo-lg.160afbe8e73f.png" height=100>  | <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Firefox_Nightly_logo%2C_2019.svg" height=100> | <img src="firefox.png" height=100> |
-| [Download](https://github.com/srevinsaju/firefox-appimage/releases/tag/stable) | [Download](https://github.com/srevinsaju/firefox-appimage/releases/tag/beta) | [Download](https://github.com/srevinsaju/firefox-appimage/releases/tag/nightly) | [Download](https://github.com/srevinsaju/firefox-appimage/releases/tag/esr)
+| [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/stable) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/beta) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/nightly) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/esr)
 
 
 ### Executing
