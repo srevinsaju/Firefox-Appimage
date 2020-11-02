@@ -6,6 +6,13 @@ if [ ! -z "$DEBUG" ] ; then
   set -x
 fi
 
+# Firefox specific environment variables
+# https://github.com/AppImage/pkg2appimage/commit/c9b09eb557b6b0b4d914ecb82998148f38880d1d
+
+export SNAP_NAME="firefox"
+export MOZ_LEGACY_PROFILES=1
+
+
 THIS="$0"
 # http://stackoverflow.com/questions/3190818/
 args=("$@")
