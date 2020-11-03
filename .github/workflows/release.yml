@@ -216,7 +216,7 @@ jobs:
         draft: false
         files: |
           firefox-continuous-x86_64.AppImage
-        repo_token: ${{ secrets.GH_TOKEN }}
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
 
   Release-Beta:
     needs: [Firefox-Beta]
@@ -236,7 +236,7 @@ jobs:
         draft: false
         files: |
           firefox-beta-continuous-x86_64.AppImage
-        repo_token: ${{ secrets.GH_TOKEN }}
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
   
   Release-ESR:
     needs: [Firefox-ESR]
@@ -256,7 +256,7 @@ jobs:
         draft: false
         files: |
           firefox-esr-continuous-x86_64.AppImage
-        repo_token: ${{ secrets.GH_TOKEN }}
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
 
   Release-Nightly:
     needs: [Firefox-Nightly]
@@ -276,5 +276,5 @@ jobs:
         draft: false
         files: |
           firefox-nightly-continuous-x86_64.AppImage
-        repo_token: ${{ secrets.GH_TOKEN }}
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
 
