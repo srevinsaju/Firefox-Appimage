@@ -30,6 +30,7 @@ jobs:
       run: |
         cd firefox
         cp ../AppRun firefox/.
+        cp -r ../distribution firefox/.
         chmod +x firefox/AppRun
         cp ../firefox.desktop firefox/.
         cp firefox/browser/chrome/icons/default/default128.png firefox/.
@@ -77,6 +78,7 @@ jobs:
       run: |
         cd firefox
         cp ../AppRun firefox/.
+        cp -r ../distribution firefox/.
         chmod +x firefox/AppRun
         cp ../firefox-beta.desktop firefox/.
         cp firefox/browser/chrome/icons/default/default128.png firefox/.
@@ -124,6 +126,7 @@ jobs:
       run: |
         cd firefox
         cp ../AppRun firefox/.
+        cp -r ../distribution firefox/.
         chmod +x firefox/AppRun
         cp ../firefox.desktop firefox/.
         cp firefox/browser/chrome/icons/default/default128.png firefox/.
@@ -170,6 +173,7 @@ jobs:
       run: |
         cd firefox
         cp ../AppRun firefox/.
+        cp -r ../distribution firefox/.
         chmod +x firefox/AppRun
         cp ../firefox-nightly.desktop firefox/.
         cp firefox/browser/chrome/icons/default/default128.png firefox/.
