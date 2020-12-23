@@ -25,6 +25,7 @@ jobs:
     - name: Build ${{ matrix.product }}
       run: |
         bash build/build.sh
+        echo "$FIREFOX_VERSION.r$FIREFOX_BUILD_ID"
         echo "FIREFOX_VERSION=$FIREFOX_VERSION" >> $GITHUB_ENV
         echo "FIREFOX_BUILD_ID=$FIREFOX_BUILD_ID" >> $GITHUB_ENV
 
