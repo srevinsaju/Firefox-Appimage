@@ -1,0 +1,7 @@
+*.AppImage
+AppDir
+*.zsync
+dist/
+*.tar.*
+build/appimagetool
+*.DELETE_ME
