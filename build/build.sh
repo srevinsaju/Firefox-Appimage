@@ -73,4 +73,7 @@ mkdir -p dist
 mv $FIREFOX_PRODUCT*.AppImage* dist/.
 echo "==> Done, saved $( realpath dist/$FIREFOX_PRODUCT*.AppImage)"
 
+echo "==> GitHub Actions "
+echo "FIREFOX_VERSION=$FIREFOX_VERSION" >> $GITHUB_ENV
+echo "FIREFOX_BUILD_ID=$FIREFOX_BUILD_ID" >> $GITHUB_ENV
 
