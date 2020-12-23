@@ -8,7 +8,6 @@ fi
 
 # Firefox specific environment variables
 # https://github.com/AppImage/pkg2appimage/commit/c9b09eb557b6b0b4d914ecb82998148f38880d1d
-
 export SNAP_NAME="firefox"
 export MOZ_LEGACY_PROFILES=1
 
@@ -38,7 +37,7 @@ export LD_LIBRARY_PATH="${APPDIR}/usr/lib:${LD_LIBRARY_PATH}"
 export XDG_DATA_DIRS="${APPDIR}"/usr/share/:"${XDG_DATA_DIRS}":/usr/share/gnome/:/usr/local/share/:/usr/share/
 export GSETTINGS_SCHEMA_DIR="${APPDIR}/usr/share/glib-2.0/schemas:${GSETTINGS_SCHEMA_DIR}"
 
-BIN="$APPDIR/firefox-bin"
+BIN="$APPDIR/FIREFOX_BIN_FILE"
 
 if [ -z "$APPIMAGE_EXIT_AFTER_INSTALL" ] ; then
   trap atexit EXIT
