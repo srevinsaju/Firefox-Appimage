@@ -60,8 +60,8 @@ echo "==> Generating AppImage"
 GH_USER="$( echo $GITHUB_REPOSITORY | grep -o ".*/" | head -c-2 )"
 GH_REPO="$( echo $GITHUB_REPOSITORY | grep -o "/.*" | cut -c2- )"
 
-FIREFOX_VERSION="$(cat build/AppDir/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')"
-FIREFOX_BUILD_ID="$(cat build/AppDir/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')"
+export FIREFOX_VERSION="$(cat build/AppDir/application.ini | grep -E 'Version' | head -n 1 | grep -E -o '[0-9]+.[0-9]+')"
+export FIREFOX_BUILD_ID="$(cat build/AppDir/application.ini | grep -E 'BuildID' | head -n 1 | grep -E -o '[0-9]+')"
 
 ./build/appimagetool -n --comp gzip \
     build/AppDir \
@@ -73,8 +73,4 @@ mkdir -p dist
 mv $FIREFOX_PRODUCT*.AppImage* dist/.
 echo "==> Done, saved $( realpath dist/$FIREFOX_PRODUCT*.AppImage)"
 
-# all done, now 
-# export vars
-export FIREFOX_VERSION
-export FIREFOX_BUILD_ID
 
