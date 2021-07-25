@@ -1,9 +1,17 @@
-<h1 align="center">
-	<img src="firefox.png" alt="Firefox" height=200 width=200 align="middle">
-	Firefox AppImage
-</h1>
+<p align="center">
+    <img src="firefox.png" alt="Firefox logo" width=128 height=128>
 
-Mozilla Firefox Stable, Beta and Nightly (unofficial) AppImages by GitHub Actions Continuous Integration
+<h2 align="center">Firefox AppImage</h2>
+
+  <p align="center">Mozilla Firefox Stable, Beta and Nightly (unofficial) AppImages by GitHub Actions Continuous Integration
+    <br>
+    <a href="https://github.com/srevinsaju/Firefox-Appimage/issues/new">Report bug</a>
+    ·
+    <a href="https://github.com/srevinsaju/Firefox-Appimage/issues/new">Request feature</a>
+    ·
+    <a href="https://github.com/srevinsaju/Firefox-Appimage/releases/latest">Download AppImage</a>
+  </p>
+</p>
 
 ## Get Started
 
@@ -14,6 +22,11 @@ Download the latest release from
 | <img src="firefox.png" height=100> | <img src="https://mozilla.org/media/protocol/img/logos/firefox/browser/beta/logo-lg.160afbe8e73f.png" height=100>  | <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Firefox_Nightly_logo%2C_2019.svg" height=100> | <img src="firefox.png" height=100> | <img src="firefox.png" height=100> | 
 | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox-beta) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox-nightly) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox-esr-next) | [Download](https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox-devedition) |
 
+
+or, use [`zap`](https://github.com/srevinsaju/zap), the command line AppImage package manager:
+```bash
+zap install --github --from=srevinsaju/Telegram-AppImage telegram-appimage
+```
 
 
 ### Executing
