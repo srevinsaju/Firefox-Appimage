@@ -25,7 +25,7 @@ Download the latest release from
 
 or, use [`zap`](https://github.com/srevinsaju/zap), the command line AppImage package manager:
 ```bash
-zap install --github --from=srevinsaju/Telegram-AppImage telegram-appimage
+zap install --github --from=srevinsaju/Firefox-AppImage firefox-appimage
 ```
 
 
