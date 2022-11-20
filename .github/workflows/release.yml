@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        product: ['firefox', 'firefox-beta', 'firefox-esr-next', 'firefox-nightly', 'firefox-devedition']
+        product: ['firefox', 'firefox-beta', 'firefox-esr', 'firefox-nightly', 'firefox-devedition']
     env:
       FIREFOX_PRODUCT: ${{ matrix.product }}
       FIREFOX_OS: 'linux64'
