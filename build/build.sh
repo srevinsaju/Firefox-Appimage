@@ -26,6 +26,8 @@
 
 set -eu
 
+export APPIMAGE_EXTRACT_AND_RUN=1
+
 rm -rf build/AppDir
 rm -rf build/firefox*
 mkdir -p build/src
