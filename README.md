@@ -31,10 +31,10 @@ zap install --github --from=srevinsaju/Firefox-AppImage firefox-appimage
 
 ### Executing
 #### File Manager
-Just double click the `*.AppImage` file and you are done.
+Double-click the `*.AppImage` file, and you are done.
 
-> In normal cases, the above method should work, but in some rare cases
-the `+x` permissisions. So, right click > Properties > Allow Execution
+> In normal cases, the above method should work, but in some rare cases,
+the `+x` permissions. So, right click > Properties > Allow Execution
 
 #### Terminal 
 ```bash
@@ -45,7 +45,7 @@ chmod +x Firefox-*.AppImage
 ./Firefox-*.AppImage
 ```
 
-In case, if FUSE support libraries are not installed on the host system, it is 
+In case FUSE libraries are not installed on the host system, it is 
 still possible to run the AppImage
 
 ```bash
