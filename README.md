@@ -31,7 +31,7 @@ zap install --github --from=srevinsaju/Firefox-AppImage firefox-appimage
 
 ### Executing
 #### File Manager
-Just double click the `*.AppImage` file and you are done!
+Just double click the `*.AppImage` file and you are done.
 
 > In normal cases, the above method should work, but in some rare cases
 the `+x` permissisions. So, right click > Properties > Allow Execution
