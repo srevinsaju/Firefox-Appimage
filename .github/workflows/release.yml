@@ -28,7 +28,7 @@ jobs:
         echo "$FIREFOX_VERSION.r$FIREFOX_BUILD_ID"
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.product }}-continuous.AppImage
         path: 'dist'
