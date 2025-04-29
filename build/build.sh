@@ -47,6 +47,11 @@ chmod 755 build/AppDir/AppRun
 echo "==> Copying Firefox Desktop file"
 cp desktop/$FIREFOX_PRODUCT.desktop build/AppDir/.
 
+echo "==> Fixing Firefox ESR StartupWMClass"
+if [[ "$FIREFOX_PRODUCT" == "firefox-esr" ]]; then
+  sed -i "/^StartupWMClass=/c\StartupWMClass=${FIREFOX_PRODUCT}" build/AppDir/"$FIREFOX_PRODUCT".desktop
+fi
+
 echo "==> Disable Auto Updates"
 cp -r distribution build/AppDir/.
 
